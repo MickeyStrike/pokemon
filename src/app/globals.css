@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -8,7 +8,7 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {
@@ -17,8 +17,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,8 +35,166 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+} */
+
+.padding-select div[role=combobox] {
+  padding: 10px 30px !important;
+  padding-left: 10px !important;
+  color: white;
+  font-weight: bold;
+  border: 3px solid white;
+}
+
+.padding-select svg {
+  color: white;
+}
+
+.padding-select fieldset {
+  border-color: white;
+}
+
+.custom-pagination .Mui-selected {
+  background-color: white !important;
+  color: #E6AB09 !important;
+  border-color: white !important;
+}
+
+.custom-pagination .Mui-selected:hover {
+  background-color: white !important;
+  color: #E6AB09 !important;
+  border-color: white !important;
+}
+
+.custom-pagination .MuiPaginationItem-root {
+  color: white;
+  border-color: white;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+.bg-blue-theme {
+  background-image: url("/BackgroundPokemon1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-red-theme {
+  background-image: url("/BackgroundPokemon2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-purple-theme {
+  background-image: url("/BackgroundPokemon3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.select-blue-theme div[role=combobox] {
+  padding: 10px 30px !important;
+  padding-left: 10px !important;
+  color: #0779B0;
+  font-weight: bold;
+  border: 3px solid #0779B0;
+}
+
+.select-blue-theme svg {
+  color: #0779B0;
+}
+
+.select-blue-theme fieldset {
+  border-color: #0779B0;
+}
+
+.select-red-theme div[role=combobox] {
+  padding: 10px 30px !important;
+  padding-left: 10px !important;
+  color: #F73B3B;
+  font-weight: bold;
+  border: 3px solid #F73B3B;
+}
+
+.select-red-theme svg {
+  color: #F73B3B;
+}
+
+.select-red-theme fieldset {
+  border-color: #F73B3B;
+}
+
+.select-purple-theme div[role=combobox] {
+  padding: 10px 30px !important;
+  padding-left: 10px !important;
+  color: #434DD0;
+  font-weight: bold;
+  border: 3px solid #434DD0;
+}
+
+.select-purple-theme svg {
+  color: #434DD0;
+}
+
+.select-purple-theme fieldset {
+  border-color: #434DD0;
+}
+
+.pagination-blue-theme .Mui-selected {
+  background-color: #0779B0 !important;
+  color: white !important;
+  border-color: #0779B0 !important;
+}
+
+.pagination-blue-theme .Mui-selected:hover {
+  background-color: #0779B0 !important;
+  color: white !important;
+  border-color: #0779B0 !important;
+}
+
+.pagination-blue-theme .MuiPaginationItem-root {
+  color: #0779B0;
+  border-color: #0779B0;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+.pagination-red-theme .Mui-selected {
+  background-color: #F73B3B !important;
+  color: white !important;
+  border-color: #F73B3B !important;
+}
+
+.pagination-red-theme .Mui-selected:hover {
+  background-color: #F73B3B !important;
+  color: white !important;
+  border-color: #F73B3B !important;
+}
+
+.pagination-red-theme .MuiPaginationItem-root {
+  color: #F73B3B;
+  border-color: #F73B3B;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+.pagination-purple-theme .Mui-selected {
+  background-color: #434DD0 !important;
+  color: white !important;
+  border-color: #434DD0 !important;
+}
+
+.pagination-purple-theme .Mui-selected:hover {
+  background-color: #434DD0 !important;
+  color: white !important;
+  border-color: #434DD0 !important;
+}
+
+.pagination-purple-theme .MuiPaginationItem-root {
+  color: #434DD0;
+  border-color: #434DD0;
+  border-width: 2px;
+  font-weight: bold;
 }
