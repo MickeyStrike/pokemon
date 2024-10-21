@@ -5,7 +5,6 @@ import { ResponseDetailPokemon } from '@/types';
 import { colorEvolution, colorStats, colorTypes } from '@/types/colorPicker';
 import Image from 'next/image';
 import { capitalizeFirstLetter } from '@/helper';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 interface IPokemonTableProps {

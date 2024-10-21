@@ -87,7 +87,7 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
               <Grid display="flex" alignItems="center" gap={2} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
                 {
                   data.types.map((x, idx) => (
-                    <Link href={`/pokemon-type/${x.type.name}`}>
+                    <Link href={`/pokemon-type/${x.type.name}`} key={x.type.name}>
                       <Chip key={x.type.name} label={x.type.name} sx={{ backgroundColor: selectColor(idx, "types"), color: 'white', padding: "7px 25px", fontWeight: "bold", fontSize: "1.25rem" }} />
                     </Link>
                   ))
@@ -213,7 +213,7 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
         <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>Evolution: </Typography>
         <div style={{ width: "100%", maxWidth: "1160px", overflowX: "auto", display: "flex", flexDirection: "row", gap: "25px", whiteSpace: "nowrap", marginTop: '20px' }}>
           {dataEvo.map((evo, idx) => (
-            <Link href={`/${evo.name}`} style={{ textDecoration: "none" }}>
+            <Link key={evo.name} href={`/${evo.name}`} style={{ textDecoration: "none" }}>
               <Evolution
                 key={idx}
                 color={selectColor(idx, "evolution")}
