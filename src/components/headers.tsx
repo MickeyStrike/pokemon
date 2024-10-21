@@ -6,6 +6,7 @@ import React, { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import Globe from '@/assets/svg/Globe';
 import { useTranslation } from 'react-i18next';
+import { useMinimizedState } from '@/helper';
 
 const menus = [
   {
@@ -18,9 +19,16 @@ const menus = [
   },
 ]
 
+interface IState {
+  lang: string
+}
+
 const Headers = () => {
   const pathname = usePathname();
   const { i18n, t } = useTranslation("common");
+  const [state, dispatch] = useMinimizedState<IState>({
+    lang: "en"
+  })
 
   const isActiveMenu = useMemo(() => (url: string) => {
     if (pathname === "/" && pathname === url) return true
@@ -41,10 +49,13 @@ const Headers = () => {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              // value={age}
+              value={state.lang}
               className='select-top-header'
               label="Age"
-              onChange={(e) => changeLanguage(e.target.value as string)}
+              onChange={(e) => {
+                changeLanguage(e.target.value as string)
+                dispatch({ lang: e.target.value })
+              }}
             >
               <MenuItem value={"en"}>English</MenuItem>
               <MenuItem value={"id"}>Indonesia</MenuItem>
