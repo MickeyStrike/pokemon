@@ -2,6 +2,7 @@
 const { i18n } = require('./next-i18next.config');
 
 const nextConfig = {
+  i18n,
   images: {
     remotePatterns: [
       {
@@ -15,7 +16,6 @@ const nextConfig = {
     ]
       // domains: ['google.com'],
   },
-  i18n,
   reactStrictMode: true,
   typescript:{    ignoreBuildErrors: true,  },
   webpack: (config) => {

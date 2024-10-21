@@ -35,11 +35,24 @@ a {
   text-decoration: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
+.select-top-header div[role=combobox] {
+  padding: 5px 30px !important;
+  padding-left: 10px !important;
+  color: #B3B6B8;
+  font-weight: bold;
+  border: none !important;
+}
+
+.select-top-header svg {
+  color: #B3B6B8;
+}
+
+.select-top-header fieldset {
+  border-color: transparent;
+}
+.select-top-header:hover {
+  border: none !important;
+}
 
 .padding-select div[role=combobox] {
   padding: 10px 30px !important;

@@ -1,3 +1,6 @@
 {
-  "lbl_home": "Home"
+  "lbl_home": "Home",
+  "lbl_home_title": "All the Pokémon data you'll ever need in one place!",
+  "lbl_pokemon_type": "Pokemon Type",
+  "lbl_thousand_of_data_compiled_into_one_place": "Thousand of data compiled into one place"
 }

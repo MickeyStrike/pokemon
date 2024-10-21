@@ -10,6 +10,7 @@ import ModalPokemon from "../modalPokemon";
 import { CustomSelect } from "../select";
 import useFrontendServices from "@/services/frontend-services";
 import { ResponseDetailPokemon } from "@/types";
+import { useTranslation } from "react-i18next";
 
 interface IState {
   isModalOpen: boolean,
@@ -22,6 +23,7 @@ interface IState {
 
 const HomePage = () => {
   const { getListPokemon, getDetailPokemon } = useFrontendServices()
+  const { t } = useTranslation("common");
 
   const [state, dispatch] = useMinimizedState<IState>({
     isModalOpen: false,
@@ -72,10 +74,10 @@ const HomePage = () => {
           <Box display="flex" flexDirection="column">
             <Box sx={{ maxWidth: "490px" }}>
               <Typography variant="h1" component="h1" sx={{ fontWeight: 'bold', fontSize: '3.25rem', lineHeight: '78px', color: '#42494D' }}>
-                {"All the Pokémon data you'll ever need in one place!"}
+                {t("lbl_home_title")}
               </Typography>
               <Typography variant="h3" component="h3" sx={{ mt: 4, color: '#7B8082', fontSize: '1.25rem' }}>
-                Thousands of data compiled into one place
+                {t("lbl_thousand_of_data_compiled_into_one_place")}
               </Typography>
             </Box>
             <Box sx={{ mt: 4 }}>

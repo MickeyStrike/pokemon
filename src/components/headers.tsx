@@ -1,35 +1,58 @@
 "use client"
 import PokemonLogo from '@/assets/svg/PokemonLogo';
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, MenuItem, Select, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
+import Globe from '@/assets/svg/Globe';
+import { useTranslation } from 'react-i18next';
 
 const menus = [
   {
-    name: "Home",
+    name: "lbl_home",
     url: "/"
   },
   {
-    name: "Pokemon Type",
+    name: "lbl_pokemon_type",
     url: "/pokemon-type"
   },
 ]
 
 const Headers = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const { i18n, t } = useTranslation("common");
 
   const isActiveMenu = useMemo(() => (url: string) => {
-    // if (pathname === "/" && pathname === url) return '#E6AB09'
-    // else if (pathname.includes("/pokemon-type") && url.includes("/pokemon-type")) return '#E6AB09'
-    // else return 'black'
     if (pathname === "/" && pathname === url) return true
     else if (pathname.includes("/pokemon-type") && url.includes("/pokemon-type")) return true
     else return false
   }, [pathname])
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <AppBar position="fixed" sx={{ backgroundColor: 'white', zIndex: 50, boxShadow: "none" }}>
+      <div style={{ background: "#F7F8F8" }}>
+        <Box sx={{ display: 'flex', gap: '40px', alignItems: 'center', justifyContent: "flex-end", marginLeft: "40px", maxWidth: "1160px" }}>
+          <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
+            <Globe />
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              // value={age}
+              className='select-top-header'
+              label="Age"
+              onChange={(e) => changeLanguage(e.target.value as string)}
+            >
+              <MenuItem value={"en"}>English</MenuItem>
+              <MenuItem value={"id"}>Indonesia</MenuItem>
+            </Select>
+
+          </div>
+        </Box>
+      </div>
       <Toolbar sx={{ maxWidth: '1160px', mx: 'auto', width: '100%', display: 'flex', padding: "0px !important" }}>
         <Link href="/" passHref>
           <Box component="span" sx={{ cursor: 'pointer' }}>
@@ -48,7 +71,7 @@ const Headers = () => {
                   textDecoration: 'none',
                 }}
               >
-                {menu.name}
+                {t(menu.name)}
               </Typography>
             </Link>
           ))}
