@@ -52,6 +52,18 @@ const Headers = () => {
               value={state.lang}
               className='select-top-header'
               label="Age"
+              sx={{
+                '&:hover': {
+                  'fieldset': {
+                    border: 'none',
+                  },
+                },
+                '&.Mui-focused': {
+                  'fieldset': {
+                    border: 'none',
+                  },
+                },
+              }}
               onChange={(e) => {
                 changeLanguage(e.target.value as string)
                 dispatch({ lang: e.target.value })

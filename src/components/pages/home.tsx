@@ -108,7 +108,7 @@ const HomePage = () => {
             PokèDex
           </Typography>
           <Typography variant="h2" component="h2" sx={{ textAlign: 'center', fontSize: '1.5rem', color: '#42494D', marginTop: 2, lineHeight: '2.25rem', fontWeight: "500" }}>
-            All Generation totaling <br /> {state.totalData} Pokemon
+            {t("lbl_all_generation_totaling")} <br /> {state.totalData} Pokemon
           </Typography>
         </Box>
 

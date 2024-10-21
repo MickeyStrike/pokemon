@@ -1,6 +1,16 @@
 {
   "lbl_home": "Home",
   "lbl_home_title": "All the Pokémon data you'll ever need in one place!",
+  "lbl_all_generation_totaling": "All Generation totaling",
   "lbl_pokemon_type": "Pokemon Type",
+  "lbl_weight": "Weight",
+  "lbl_height": "Height",
+  "lbl_abilities": "Abilities",
+  "lbl_type": "Type",
+  "lbl_more_detail": "More Detail",
+  "lbl_other_images": "Other Images",
+  "lbl_stats": "Stats",
+  "lbl_evolution": "Evolution",
+  "lbl_pokemon_with_type": "Pokemon with Type",
   "lbl_thousand_of_data_compiled_into_one_place": "Thousand of data compiled into one place"
 }

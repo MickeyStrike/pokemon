@@ -1,6 +1,16 @@
 {
   "lbl_home": "Beranda",
   "lbl_home_title": "Semua data Pokémon yang Anda perlukan di satu tempat!",
+  "lbl_all_generation_totaling": "Total Semua Generasi",
   "lbl_pokemon_type": "Tipe Pokemon",
+  "lbl_weight": "Berat",
+  "lbl_height": "Tinggi Badan",
+  "lbl_abilities": "Kemampuan",
+  "lbl_type": "Jenis",
+  "lbl_more_detail": "Detail Lebih Lanjut",
+  "lbl_other_images": "Gambar Lainnya",
+  "lbl_stats": "Statistik",
+  "lbl_evolution": "Evolusi",
+  "lbl_pokemon_with_type": "Pokemon dengan Tipe",
   "lbl_thousand_of_data_compiled_into_one_place": "Ribuan data terkumpul dalam satu tempat"
 }

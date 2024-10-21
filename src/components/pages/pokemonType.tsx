@@ -10,6 +10,7 @@ import { ResponseDetailPokemon, Result } from '@/types';
 import { Pokemon } from '@/types/pokemonType';
 import { CustomSelect } from '../select';
 import { useParams, useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 interface Params {
   [key: string]: string | string[];
@@ -51,6 +52,7 @@ const themeColor = {
 const PokemonType = () => {
   const params = useParams()
   const router = useRouter()
+  const { t } = useTranslation("common")
 
   const { getListPokemonType, getListPokemonByType, getDetailPokemon } = useFrontendServices()
   const [state, dispatch] = useMinimizedState<IState>({
@@ -161,7 +163,7 @@ const PokemonType = () => {
             flexDirection="column"
             pt="30px"
           >
-            <Typography sx={{ fontSize: "2.5rem", fontWeight: "bold", color: "#42494D" }}>Pokemon with Type {capitalizeFirstLetter(state.selectedType)}</Typography>
+            <Typography sx={{ fontSize: "2.5rem", fontWeight: "bold", color: "#42494D" }}>{t("lbl_pokemon_with_type")} {capitalizeFirstLetter(state.selectedType)}</Typography>
             <TablePokemon listPokemon={state.listCompletedPokemon} />
             {/* pagination section */}
             <Grid mx="auto" container zIndex={10} display="flex" alignItems="center" justifyContent="space-between" sx={{ marginTop: "30px", marginBottom: "30px", width: "100%" }}>

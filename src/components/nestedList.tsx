@@ -7,6 +7,7 @@ import Collapse from '@mui/material/Collapse';
 import FiberManualRecord from '@mui/icons-material/FiberManualRecord';
 import { Typography } from '@mui/material';
 import { Result } from '@/types';
+import { useTranslation } from 'react-i18next';
 
 interface INestedListProps {
   data: Result[],
@@ -17,6 +18,7 @@ interface INestedListProps {
 
 const NestedList:FC<INestedListProps> = ({ data, selectedType, color, changeType }) => {
   const [open, setOpen] = React.useState(true);
+  const { t } = useTranslation("common")
 
   const handleClick = () => {
     setOpen(!open);
@@ -29,8 +31,7 @@ const NestedList:FC<INestedListProps> = ({ data, selectedType, color, changeType
       aria-labelledby="nested-list-subheader"
     >
       <ListItemButton onClick={handleClick}>
-        {/* <ListItemText primary="Pokemon Type" /> */}
-        <Typography sx={{ fontWeight: "bold", fontSize: "1rem" }}>Pokemon Type</Typography>
+        <Typography sx={{ fontWeight: "bold", fontSize: "1rem" }}>{t("lbl_pokemon_type")}</Typography>
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>

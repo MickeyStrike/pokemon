@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { capitalizeFirstLetter } from '@/helper';
 import { colorEvolution, colorStats, colorTypes } from '@/types/colorPicker';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 interface DataEvo {
   name: string,
@@ -21,6 +22,8 @@ interface IPokemonDetailProps {
 }
 
 const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
+
+  const { t } = useTranslation("common");
 
   const selectColor = (idx: number, type: "types" | "stats" | "evolution"): string => {
     if (type === "types") {
@@ -50,9 +53,6 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
                 width={300}
                 height={300}
               />
-              {/* <div style={{ width: '300px', height: '300px', backgroundColor: '#D3D3D3', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Typography>Pokemon Picture Placeholder</Typography>
-              </div> */}
             </div>
           </Grid>
 
@@ -62,16 +62,16 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
             </Typography>
             <Grid direction="row" container spacing={1}>
               <Grid display="flex" alignItems="center" gap={4} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>Weight:</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>{t("lbl_weight")}:</Typography>
                 <Typography>{data.weight}</Typography>
               </Grid>
               <Grid display="flex" alignItems="center" gap={4} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>Height:</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>{t("lbl_height")}:</Typography>
                 <Typography>{data.height}</Typography>
               </Grid>
             </Grid>
             <Stack direction="row" spacing={6} mt={3}>
-              <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>Abilities:</Typography>
+              <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>{t("lbl_abilities")}:</Typography>
               <ul>
                 {
                   data.abilities.map((x) => (
@@ -82,7 +82,7 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
             </Stack>
             <Grid direction="row" container spacing={1} alignItems="center" gap={{ xs: 0, md: 8 }}>
               <Stack direction="row" spacing={1} mt={1}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>Type:</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>{t("lbl_type")}:</Typography>
               </Stack>
               <Grid display="flex" alignItems="center" gap={2} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
                 {
@@ -105,7 +105,7 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
         flexDirection="column"
         pt="30px"
       >
-        <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>Other Images : </Typography>
+        <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>{t("lbl_other_images")} : </Typography>
         <div style={{ width: "100%", maxWidth: "1160px", overflowX: "auto", display: "flex", flexDirection: "row", gap: "25px", whiteSpace: "nowrap", marginTop: '20px' }}>
           {
             data.sprites.front_default && 
@@ -189,7 +189,7 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
         flexDirection="column"
         pt="30px"
       >
-        <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>Stats : </Typography>
+        <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>{t("lbl_stats")} : </Typography>
         <div style={{ width: "100%", maxWidth: "1160px", overflowX: "auto", display: "flex", flexDirection: "row", gap: "25px", whiteSpace: "nowrap", marginTop: '20px' }}>
           {data.stats.map((stat, idx) => (
             <Stats
@@ -210,7 +210,7 @@ const PokemonDetail:FC<IPokemonDetailProps> = ({ data, dataEvo }) => {
         pt="50px"
         pb="30px"
       >
-        <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>Evolution: </Typography>
+        <Typography sx={{ fontSize: "1.25rem", fontWeight: "bold", color: "#42494D" }}>{t("lbl_evolution")}: </Typography>
         <div style={{ width: "100%", maxWidth: "1160px", overflowX: "auto", display: "flex", flexDirection: "row", gap: "25px", whiteSpace: "nowrap", marginTop: '20px' }}>
           {dataEvo.map((evo, idx) => (
             <Link key={evo.name} href={`/${evo.name}`} style={{ textDecoration: "none" }}>

@@ -6,6 +6,7 @@ import { ResponseDetailPokemon } from '@/types';
 import Image from 'next/image';
 import { capitalizeFirstLetter } from '@/helper';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 interface IModalPokemonProps {
   visible: boolean,
@@ -25,6 +26,8 @@ const ModalPokemon:FC<IModalPokemonProps> = ({
   handleClose,
   data
 }) => {
+
+  const { t } = useTranslation("common");
 
   const selectColor = (idx: number): string => {
     if (idx > 3) return colorTypes["3"];
@@ -70,9 +73,6 @@ const ModalPokemon:FC<IModalPokemonProps> = ({
                 width={300}
                 height={300}
               />
-              {/* <div style={{ width: '300px', height: '300px', backgroundColor: '#D3D3D3', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Typography>Pokemon Picture Placeholder</Typography>
-              </div> */}
             </div>
           </Grid>
 
@@ -82,16 +82,16 @@ const ModalPokemon:FC<IModalPokemonProps> = ({
             </Typography>
             <Grid direction="row" container spacing={1}>
               <Grid display="flex" alignItems="center" gap={4} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>Weight:</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>{t("lbl_weight")}:</Typography>
                 <Typography>{data.weight}</Typography>
               </Grid>
               <Grid display="flex" alignItems="center" gap={4} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>Height:</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: "1.25rem" }}>{t("lbl_height")}:</Typography>
                 <Typography>{data.height}</Typography>
               </Grid>
             </Grid>
             <Stack direction="row" spacing={6} mt={3}>
-              <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>Abilities:</Typography>
+              <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>{t("lbl_abilities")}:</Typography>
               <ul>
                 {
                   data.abilities.map((x) => (
@@ -102,7 +102,7 @@ const ModalPokemon:FC<IModalPokemonProps> = ({
             </Stack>
             <Grid direction="row" container spacing={1} alignItems="center" gap={{ xs: 0, md: 8 }}>
               <Stack direction="row" spacing={1} mt={1}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>Type:</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', mt: 2, fontSize: "1.25rem" }}>{t("lbl_type")}:</Typography>
               </Stack>
               <Grid display="flex" alignItems="center" gap={2} direction="row" mt={3} size={{ xs: 12, md: 6 }}>
                 {
@@ -117,7 +117,7 @@ const ModalPokemon:FC<IModalPokemonProps> = ({
                 variant="contained"
                 sx={{ mt: 4, backgroundColor: '#E6AB09', color: 'white', fontWeight: 'bold', borderRadius: "14px", boxShadow: "none" }}
               >
-                More Detail
+                {t("lbl_more_detail")}
               </Button>
             </Link>
           </Grid>
